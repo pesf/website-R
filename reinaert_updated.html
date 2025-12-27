@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="nl" scroll="scroll">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpeg" href="/fox.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.R.D. "Reinaert" - Heeren Roeiers Disput</title>
+    <meta name="description" content="Heeren Roeiers Disput Reinaert - Onderdeel van de Eindhovense Studenten Roeivereniging Thêta">
+    <meta property="og:title" content="H.R.D. Reinaert">
+    <meta property="og:description" content="Heeren Roeiers Disput Reinaert - Eindhovense Studenten Roeivereniging">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f6f2ea;
+            color: white;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url("fox.jpeg");
+            background-repeat: repeat;
+            background-size: 160px auto;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: rgba(16, 24, 42, 0.95);
+            backdrop-filter: blur(4px);
+            border-bottom: 4px solid #7A0F2D;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            color: #7A0F2D;
+            font-weight: 600;
+            font-family: 'Cinzel', serif;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #7A0F2D;
+        }
+
+        .loop-under-banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            background: transparent;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .loop-under-banner video {
+            display: block;
+            width: 100vw;
+            max-width: none;
+            height: auto;
+            -webkit-clip-path: inset(452px 0 377px 0);
+            clip-path: inset(452px 0 377px 0);
+            margin-top: -452px;
+            margin-bottom: -377px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 80px 20px;
+            min-height: calc(100vh - 300px);
+        }
+
+        .content-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .about-section {
+            max-width: 800px;
+            text-align: center;
+            padding: 40px;
+            border: 4px solid #7A0F2D;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .intro-section {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+        }
+
+        .about-section h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            font-weight: 400;
+            color: #111111;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #111111;
+        }
+
+        .about-section p + p {
+            margin-top: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #7A0F2D;
+            padding: 40px 60px;
+            text-align: center;
+        }
+
+        .copyright {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+        }
+
+        .motto {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            .motto {
+                font-size: 24px;
+                letter-spacing: 4px;
+            }
+
+            footer {
+                padding: 30px 20px;
+            }
+
+            main {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="fox.jpeg" alt="Reinaert Fox Logo">
+            <h1>H.R.D. "Reinaert"</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#fotos">Foto's</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#malperthuys">Malperthuys</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="loop-under-banner">
+        <video autoplay muted loop playsinline aria-hidden="true">
+            <source src="HRDR loop.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <main>
+        <div class="content-wrapper">
+            <section class="about-section intro-section" id="home">
+                <h2>Lectori salutem,</h2>
+                <p>U bent beland op de internetpagina des Heeren Roeiers Dispuuts "Reinaert".</p>
+                <p>'T was in eenen tsinxen daghe, dat onze heeren gheene weldaet spaarden. Verenigd door hart voor de vereniging en betrokken bij alles wat zij te bieden heeft, pretenderen wij van onschatbare waarde voor de Eindhovense Studenten Roeivereniging "Thêta" te zijn. Onze geldelijke zaken doen wij bij voorkeur in box 4, die net als de nacht in mysterie is gehuld. Geld moet rollen, anders was het wel vierkant geweest.</p>
+                <p>Borrelen? Liefdesbrieven kunt u altijd expediëren naar senaat@hrdreinaert.nl</p>
+                <p>U kunt natuurlijk ook altijd terecht te Malperthuys voor een bak pløhr of een glaasje Kuypers.</p>
+            </section>
+
+            <section class="about-section">
+                <h2>Over H.R.D. "Reinaert"</h2>
+                <p>Onderdeel van de Eindhovense Studenten Roeivereniging "Thêta". Verenigd door hart voor de vereniging en betrokken bij alles wat zij te bieden heeft.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p class="copyright">© 2025 H.R.D. "Reinaert" - Eindhovense Studenten Roeivereniging "Thêta"</p>
+        <h3 class="motto">Men sal ghene weldaet sparen</h3>
+    </footer>
+</body>
+</html>
