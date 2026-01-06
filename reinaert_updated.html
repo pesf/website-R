@@ -52,6 +52,60 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            position: relative;
+        }
+
+        .logo__fox {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 0;
+        }
+
+        .logo__fox img {
+            display: block;
+        }
+
+        .speech-bubble {
+            position: absolute;
+            left: 54px;
+            top: -4px;
+            max-width: 240px;
+            padding: 8px 10px;
+            border-radius: 14px;
+            background: #ffffff;
+            border: 2px solid #7A0F2D;
+            color: #111111;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            line-height: 1.25;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 180ms ease, transform 180ms ease;
+            pointer-events: none;
+            z-index: 2;
+            white-space: normal;
+        }
+
+        .speech-bubble::after {
+            content: "";
+            position: absolute;
+            left: -34px;
+            top: 22px;
+            width: 34px;
+            height: 24px;
+            background:
+                radial-gradient(circle at 28px 6px, #7A0F2D 0 6px, transparent 6px),
+                radial-gradient(circle at 18px 12px, #7A0F2D 0 5px, transparent 5px),
+                radial-gradient(circle at 8px 18px, #7A0F2D 0 4px, transparent 4px);
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        .logo.logo--speaking .speech-bubble {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .logo img {
@@ -84,27 +138,6 @@
             color: #7A0F2D;
         }
 
-        .loop-under-banner {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            background: transparent;
-            overflow: hidden;
-            line-height: 0;
-        }
-
-        .loop-under-banner video {
-            display: block;
-            width: 100vw;
-            max-width: none;
-            height: auto;
-            -webkit-clip-path: inset(452px 0 377px 0);
-            clip-path: inset(452px 0 377px 0);
-            margin-top: -452px;
-            margin-bottom: -377px;
-        }
-
         /* Main Content */
         main {
             padding: 80px 20px;
@@ -117,15 +150,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 80px;
+            gap: 56px;
         }
 
         .about-section {
-            max-width: 800px;
-            text-align: center;
-            padding: 40px;
-            border: 4px solid #7A0F2D;
-            border-radius: 8px;
+            max-width: 980px;
+            width: 100%;
+            text-align: left;
+            padding: 44px 52px;
+            border: 1px solid #7A0F2D;
+            border-top-width: 8px;
+            border-radius: 12px;
             background: #ffffff;
             color: #111111;
         }
@@ -137,20 +172,120 @@
         }
 
         .about-section h2 {
-            font-size: 36px;
-            margin-bottom: 25px;
-            font-weight: 400;
+            font-size: 28px;
+            margin-bottom: 14px;
+            font-weight: 700;
             color: #111111;
+            text-align: left;
+            letter-spacing: 0.02em;
         }
 
         .about-section p {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 17px;
+            line-height: 1.7;
             color: #111111;
+            max-width: 70ch;
+            margin: 0;
         }
 
         .about-section p + p {
+            margin-top: 14px;
+        }
+
+        .contact-section {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            column-gap: 24px;
+            row-gap: 12px;
+            align-items: start;
+        }
+
+        .contact-form__map {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .contact-form__top {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .contact-form__message {
+            grid-column: 1 / -1;
+            grid-row: 2;
+        }
+
+        .contact-form__message .form-field {
+            margin-top: 0;
+        }
+
+        .map-embed {
+            width: 100%;
+            height: 220px;
+            border: 0;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 0;
+        }
+
+        .form-field {
+            margin-top: 12px;
+        }
+
+        .form-field label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            font: inherit;
+            padding: 10px 12px;
+            border: 1px solid rgba(16, 24, 42, 0.25);
+            border-radius: 10px;
+            background: #ffffff;
+            color: #111111;
+        }
+
+        .form-field textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .contact-actions {
             margin-top: 16px;
+            grid-column: 1 / -1;
+        }
+
+        .btn-submit {
+            appearance: none;
+            border: 0;
+            border-radius: 999px;
+            padding: 12px 18px;
+            background: #7A0F2D;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            filter: brightness(1.05);
         }
 
         /* Footer */
@@ -199,30 +334,42 @@
             main {
                 padding: 40px 20px;
             }
+
+            .about-section {
+                padding: 26px 20px;
+            }
+
+            .about-section h2 {
+                font-size: 22px;
+            }
+
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body>
+<body id="top">
     <header>
         <div class="logo">
-            <img src="fox.jpeg" alt="Reinaert Fox Logo">
+            <a class="logo__fox" href="#top" aria-label="Naar boven">
+                <img src="fox.jpeg" alt="Reinaert Fox Logo">
+            </a>
+            <span class="speech-bubble" aria-hidden="true">ende horen tale ende wedertale</span>
             <h1>H.R.D. "Reinaert"</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#fotos">Foto's</a></li>
+                <li><a href="https://tegelizr.nl/tegeltje/wie-dit-leest-trekt-een-bak/">Nieuws</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#malperthuys">Malperthuys</a></li>
+                <li><a href="https://maps.app.goo.gl/osiNWo7jzNYLWv8V8">Malperthuys</a></li>
             </ul>
         </nav>
     </header>
-
-    <div class="loop-under-banner">
-        <video autoplay muted loop playsinline aria-hidden="true">
-            <source src="HRDR loop.mp4" type="video/mp4">
-        </video>
-    </div>
 
     <main>
         <div class="content-wrapper">
@@ -234,9 +381,46 @@
                 <p>U kunt natuurlijk ook altijd terecht te Malperthuys voor een bak pløhr of een glaasje Kuypers.</p>
             </section>
 
-            <section class="about-section">
-                <h2>Over H.R.D. "Reinaert"</h2>
-                <p>Onderdeel van de Eindhovense Studenten Roeivereniging "Thêta". Verenigd door hart voor de vereniging en betrokken bij alles wat zij te bieden heeft.</p>
+            <section class="about-section contact-section" id="contact">
+                <h2>Contact</h2>
+                <form class="contact-form" action="mailto:senaat@hrdreinaert.nl?subject=Bericht%20via%20website" method="post" enctype="text/plain">
+                    <iframe
+                        class="map-embed contact-form__map"
+                        title="Malperthuys (Google Maps)"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps?q=51.4546426,5.4829546&z=15&output=embed">
+                    </iframe>
+
+                    <div class="contact-form__top">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="firstName">Voornaam *</label>
+                                <input id="firstName" name="Voornaam" autocomplete="given-name" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="lastName">Achternaam *</label>
+                                <input id="lastName" name="Achternaam" autocomplete="family-name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email">E-mail *</label>
+                            <input id="email" type="email" name="E-mail" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <div class="contact-form__message">
+                        <div class="form-field">
+                            <label for="message">Reactie of bericht *</label>
+                            <textarea id="message" name="Bericht" required></textarea>
+                        </div>
+
+                        <div class="contact-actions">
+                            <button class="btn-submit" type="submit">Verstuur</button>
+                        </div>
+                    </div>
+                </form>
             </section>
         </div>
     </main>
@@ -245,5 +429,28 @@
         <p class="copyright">© 2025 H.R.D. "Reinaert" - Eindhovense Studenten Roeivereniging "Thêta"</p>
         <h3 class="motto">Men sal ghene weldaet sparen</h3>
     </footer>
+
+    <script>
+        (function () {
+            const logo = document.querySelector('.logo');
+            const foxLink = document.querySelector('.logo__fox');
+
+            if (!logo || !foxLink) return;
+
+            let speechTimer = null;
+
+            foxLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                logo.classList.add('logo--speaking');
+                if (speechTimer) window.clearTimeout(speechTimer);
+                speechTimer = window.setTimeout(function () {
+                    logo.classList.remove('logo--speaking');
+                    speechTimer = null;
+                }, 2200);
+            });
+        })();
+    </script>
 </body>
 </html>
