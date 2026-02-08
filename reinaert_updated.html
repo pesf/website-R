@@ -106,7 +106,7 @@
         .hero__scroll-indicator {
             position: absolute;
             bottom: 40px;
-            left: 50%;
+            left: calc(50% + 7px);
             transform: translateX(-50%);
             display: flex;
             flex-direction: column;
@@ -294,6 +294,77 @@
             max-width: 1100px;
             width: 100%;
             background: #ffffff;
+            display: flex;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .intro-section__text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .intro-section__slideshow {
+            flex: 0 0 320px;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #e0e0e0;
+            min-height: 280px;
+        }
+
+        .slideshow__slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .slideshow__slide.active {
+            opacity: 1;
+        }
+
+        .slideshow__slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slideshow__placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .slideshow__dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .slideshow__dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .slideshow__dot.active {
+            background: #7A0F2D;
+            border-color: #ffffff;
         }
 
         .about-section h2 {
@@ -476,6 +547,17 @@
                 font-size: 22px;
             }
 
+            .intro-section {
+                flex-direction: column;
+            }
+
+            .intro-section__slideshow {
+                flex: none;
+                width: 100%;
+                height: 220px;
+                order: -1;
+            }
+
             .contact-form {
                 grid-template-columns: 1fr;
                 display: flex;
@@ -540,11 +622,33 @@
     <main>
         <div class="content-wrapper">
             <section class="about-section intro-section" id="home">
-                <h2>Lectori salutem,</h2>
-                <p>U bent beland op de internetpagina des Heeren Roeiers Dispuuts "Reinaert".</p>
-                <p>'T was in eenen tsinxen daghe, dat onze heeren gheene weldaet spaarden. Verenigd door hart voor de vereniging en betrokken bij alles wat zij te bieden heeft, pretenderen wij van onschatbare waarde voor de Eindhovense Studenten Roeivereniging "Thêta" te zijn. Onze geldelijke zaken doen wij bij voorkeur in box 4, die net als de nacht in mysterie is gehuld. Geld moet rollen, anders was het wel vierkant geweest.</p>
-                <p>Borrelen? Liefdesbrieven kunt u altijd expediëren naar senaat@hrdreinaert.nl</p>
-                <p>U kunt natuurlijk ook altijd terecht te Malperthuys voor een bak pløhr of een glaasje Kuypers.</p>
+                <div class="intro-section__text">
+                    <h2>Lectori salutem,</h2>
+                    <p>U bent beland op de internetpagina des Heeren Roeiers Dispuuts "Reinaert".</p>
+                    <p>'T was in eenen tsinxen daghe, dat onze heeren gheene weldaet spaarden. Verenigd door hart voor de vereniging en betrokken bij alles wat zij te bieden heeft, pretenderen wij van onschatbare waarde voor de Eindhovense Studenten Roeivereniging "Thêta" te zijn. Onze geldelijke zaken doen wij bij voorkeur in box 4, die net als de nacht in mysterie is gehuld. Geld moet rollen, anders was het wel vierkant geweest.</p>
+                    <p>Borrelen? Liefdesbrieven kunt u altijd expediëren naar senaat@hrdreinaert.nl</p>
+                    <p>U kunt natuurlijk ook altijd terecht te Malperthuys voor een bak pløhr of een glaasje Kuypers.</p>
+                </div>
+                <div class="intro-section__slideshow">
+                    <!-- Add your photos here: replace placeholder with actual images -->
+                    <div class="slideshow__slide active">
+                        <div class="slideshow__placeholder">Foto 1<br>(voeg afbeelding toe)</div>
+                        <!-- <img src="photo1.jpg" alt="Foto 1"> -->
+                    </div>
+                    <div class="slideshow__slide">
+                        <div class="slideshow__placeholder">Foto 2<br>(voeg afbeelding toe)</div>
+                        <!-- <img src="photo2.jpg" alt="Foto 2"> -->
+                    </div>
+                    <div class="slideshow__slide">
+                        <div class="slideshow__placeholder">Foto 3<br>(voeg afbeelding toe)</div>
+                        <!-- <img src="photo3.jpg" alt="Foto 3"> -->
+                    </div>
+                    <div class="slideshow__dots">
+                        <span class="slideshow__dot active" data-slide="0"></span>
+                        <span class="slideshow__dot" data-slide="1"></span>
+                        <span class="slideshow__dot" data-slide="2"></span>
+                    </div>
+                </div>
             </section>
 
             <section class="about-section contact-section" id="contact">
@@ -653,6 +757,40 @@
                     speechTimer = null;
                 }, 2200);
             });
+
+            // Slideshow functionality
+            const slides = document.querySelectorAll('.slideshow__slide');
+            const dots = document.querySelectorAll('.slideshow__dot');
+            let currentSlide = 0;
+            let slideshowInterval;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                showSlide((currentSlide + 1) % slides.length);
+            }
+
+            // Auto-advance slides every 4 seconds
+            if (slides.length > 0) {
+                slideshowInterval = setInterval(nextSlide, 4000);
+
+                // Click on dots to navigate
+                dots.forEach(dot => {
+                    dot.addEventListener('click', function() {
+                        clearInterval(slideshowInterval);
+                        showSlide(parseInt(this.dataset.slide));
+                        slideshowInterval = setInterval(nextSlide, 4000);
+                    });
+                });
+            }
         })();
     </script>
 </body>
