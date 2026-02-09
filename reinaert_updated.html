@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="nl" scroll="scroll">
 <head>
+    <!-- made by Miguel Betran Menz -->
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H.R.D. "Reinaert" - Heeren Roeiers Disput</title>
-    <meta name="description" content="Heeren Roeiers Disput Reinaert - Onderdeel van de Eindhovense Studenten Roeivereniging Thêta">
+    <title>H.R.D. "Reinaert" - Heeren Roeiers Dispuut</title>
+    <meta name="description" content="Heeren Roeiers Dispuut Reinaert - Onderdeel van de Eindhovense Studenten Roeivereniging Thêta">
     <meta property="og:title" content="H.R.D. Reinaert">
-    <meta property="og:description" content="Heeren Roeiers Disput Reinaert - Eindhovense Studenten Roeivereniging">
+    <meta property="og:description" content="Heeren Roeiers Dispuut Reinaert - Eindhovense Studenten Roeivereniging">
     <style>
         * {
             margin: 0;
@@ -67,7 +68,7 @@
         .hero__overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(16, 24, 42, 0.3) 0%, rgba(16, 24, 42, 0.7) 100%);
+            background: linear-gradient(to bottom, rgba(18, 25, 42, 0.3) 0%, rgba(18, 25, 42, 0.7) 100%);
             z-index: -1;
         }
 
@@ -152,7 +153,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 60px;
-            background-color: rgba(16, 24, 42, 0);
+            background-color: rgba(18, 25, 42, 0);
             backdrop-filter: blur(0px);
             border-bottom: 4px solid transparent;
             z-index: 1000;
@@ -160,9 +161,9 @@
         }
 
         header.scrolled {
-            background-color: rgb(16, 24, 42);
+            background-color: rgb(18, 25, 42);
             backdrop-filter: none;
-            border-bottom-color: #7A0F2D;
+            border-bottom-color: #64190f;
         }
 
         .logo {
@@ -191,7 +192,7 @@
             padding: 8px 10px;
             border-radius: 14px;
             background: #ffffff;
-            border: 2px solid #7A0F2D;
+            border: 2px solid #64190f;
             color: #111111;
             font-size: 12px;
             font-weight: 700;
@@ -213,9 +214,9 @@
             width: 34px;
             height: 24px;
             background:
-                radial-gradient(circle at 28px 6px, #7A0F2D 0 6px, transparent 6px),
-                radial-gradient(circle at 18px 12px, #7A0F2D 0 5px, transparent 5px),
-                radial-gradient(circle at 8px 18px, #7A0F2D 0 4px, transparent 4px);
+                radial-gradient(circle at 28px 6px, #64190f 0 6px, transparent 6px),
+                radial-gradient(circle at 18px 12px, #64190f 0 5px, transparent 5px),
+                radial-gradient(circle at 8px 18px, #64190f 0 4px, transparent 4px);
             background-repeat: no-repeat;
             pointer-events: none;
         }
@@ -232,7 +233,7 @@
 
         .logo h1 {
             font-size: 28px;
-            color: #7A0F2D;
+            color: #ffffff;
             font-weight: 600;
             font-family: 'Cinzel', serif;
             opacity: 0;
@@ -260,7 +261,7 @@
         }
 
         nav a:hover {
-            color: #7A0F2D;
+            color: #64190f;
         }
 
         /* Main Content */
@@ -283,7 +284,7 @@
             width: 100%;
             text-align: left;
             padding: 44px 52px;
-            border: 1px solid #7A0F2D;
+            border: 1px solid #64190f;
             border-top-width: 8px;
             border-radius: 12px;
             background: #ffffff;
@@ -363,7 +364,7 @@
         }
 
         .slideshow__dot.active {
-            background: #7A0F2D;
+            background: #64190f;
             border-color: #ffffff;
         }
 
@@ -451,7 +452,7 @@
             width: 100%;
             font: inherit;
             padding: 10px 12px;
-            border: 1px solid rgba(16, 24, 42, 0.25);
+            border: 1px solid rgba(18, 25, 42, 0.25);
             border-radius: 10px;
             background: #ffffff;
             color: #111111;
@@ -472,7 +473,7 @@
             border: 0;
             border-radius: 999px;
             padding: 12px 18px;
-            background: #7A0F2D;
+            background: #64190f;
             color: #ffffff;
             font-weight: 700;
             letter-spacing: 0.08em;
@@ -486,7 +487,7 @@
 
         /* Footer */
         footer {
-            background-color: #7A0F2D;
+            background-color: #64190f;
             padding: 40px 60px;
             text-align: center;
         }
@@ -508,6 +509,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .hero__background {
+                background-attachment: scroll;
+                background-position: center center;
+            }
+
             .hero__title {
                 font-size: 40px;
             }
@@ -597,7 +603,7 @@
         <div class="hero__overlay"></div>
         <div class="hero__content">
             <h1 class="hero__title">H.R.D. "Reinaert"</h1>
-            <p class="hero__subtitle">Heeren Roeiers Disput</p>
+            <p class="hero__subtitle">Heeren Roeiers Dispuut</p>
         </div>
         <div class="hero__scroll-indicator"></div>
     </section>
@@ -630,6 +636,37 @@
                     <p>Borrelen? Liefdesbrieven kunt u altijd expediëren naar senaat@hrdreinaert.nl</p>
                     <p>U kunt natuurlijk ook altijd terecht te Malperthuys voor een bak pløhr of een glaasje Kuypers.</p>
                 </div>
+                
+                <!-- 
+                ╔══════════════════════════════════════════════════════════════════════════════╗
+                ║                         SLIDESHOW BEWERKEN                                   ║
+                ╠══════════════════════════════════════════════════════════════════════════════╣
+                ║                                                                              ║
+                ║  FOTO TOEVOEGEN:                                                             ║
+                ║  1. Upload je foto naar dezelfde map als dit HTML bestand                    ║
+                ║  2. Kopieer dit blok en plak het voor </div> van slideshow__dots:            ║
+                ║                                                                              ║
+                ║     <div class="slideshow__slide">                                           ║
+                ║         <img src="JOUW_FOTO.jpg" alt="Beschrijving">                         ║
+                ║     </div>                                                                   ║
+                ║                                                                              ║
+                ║  3. Voeg ook een nieuwe dot toe in slideshow__dots:                          ║
+                ║     <span class="slideshow__dot" data-slide="X"></span>                      ║
+                ║     (Vervang X met het volgende nummer, beginnend bij 0)                     ║
+                ║                                                                              ║
+                ║  FOTO VERWIJDEREN:                                                           ║
+                ║  1. Verwijder het hele <div class="slideshow__slide">...</div> blok          ║
+                ║  2. Verwijder ook de bijbehorende dot                                        ║
+                ║  3. Pas de data-slide nummers aan (moeten 0, 1, 2, 3... zijn)                ║
+                ║                                                                              ║
+                ║  FOTO VERVANGEN:                                                             ║
+                ║  Verander alleen de bestandsnaam in src="..." en alt="..."                   ║
+                ║                                                                              ║
+                ║  TIP: Gebruik horizontale foto's voor beste resultaat!                       ║
+                ║                                                                              ║
+                ╚══════════════════════════════════════════════════════════════════════════════╝
+                -->
+                
                 <div class="intro-section__slideshow">
                     <div class="slideshow__slide active">
                         <img src="dispuut_2025.jpg" alt="Eindhoven 2025">
@@ -658,7 +695,7 @@
 
             <section class="about-section contact-section" id="contact">
                 <h2>Contact</h2>
-                <form class="contact-form" action="mailto:senaat@hrdreinaert.nl?subject=Bericht%20via%20website" method="post" enctype="text/plain">
+                <form class="contact-form" id="contact-form" onsubmit="return sendEmail(event)">
                     <iframe
                         class="map-embed contact-form__map"
                         title="Malperthuys (Google Maps)"
@@ -797,6 +834,27 @@
                 });
             }
         })();
+
+        // Contact form email function
+        function sendEmail(event) {
+            event.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const subject = encodeURIComponent('Bericht via website - ' + firstName + ' ' + lastName);
+            const body = encodeURIComponent(
+                'Naam: ' + firstName + ' ' + lastName + '\n' +
+                'E-mail: ' + email + '\n\n' +
+                'Bericht:\n' + message
+            );
+            
+            window.location.href = 'mailto:senaat@hrdreinaert.nl?subject=' + subject + '&body=' + body;
+            
+            return false;
+        }
     </script>
 </body>
 </html>
